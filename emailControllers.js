@@ -6,11 +6,14 @@ require('dotenv').config();
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: process.env.SMTP_PORT,
-  secure: false,
+  service: process.env.SMPT_SERVICE,
   auth: {
     user: process.env.SMTP_MAIL,
     pass: process.env.SMTP_PASSWORD
-  }
+  },
+  tls: {
+    rejectUnauthorized: false,
+  },
 });
 
 const sendEmail = expressAsyncHandler(async (req, res) => {
@@ -23,12 +26,14 @@ const sendEmail = expressAsyncHandler(async (req, res) => {
   }
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
-      console.log(error);
+      console.log('Error in sending email  ' + error);
+      return true;
     } else {
-      console.log("Email sent successfully!")
+      console.log('Email sent: ' + info.response);
+      return false;
     }
   });
-  // console.log(email, subject, message);
+  console.log(email, subject, message);
 });
 
 module.exports = { sendEmail }
