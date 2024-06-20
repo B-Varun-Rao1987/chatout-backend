@@ -14,6 +14,6 @@ Experience a new level of conversational AI with ChatOut, designed to provide ef
 
 ## Technologies used
 
-- React.js in frontend.
-- Backend server powered by Gemini generative AI Model using Node.js and Express.js Framework.
-- Firestore Database to store user information to provide personalised experience when sign in.  
+- I have used React.js in frontend.
+- Backend server is powered by Gemini generative AI Model using Node.js and Express.js Framework.
+- Firestore Database is used to store user information to provide personalised experience when signed in.  
