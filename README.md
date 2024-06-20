@@ -1,6 +1,8 @@
 # ChatOut
 
 ChatOut is an advanced conversational chatbot built with React.js, leveraging the power of the Gemini-pro Generative AI Model to deliver an exceptional user experience.
+However,this repo contains only the backend code.
+
 
 ## Features
 
